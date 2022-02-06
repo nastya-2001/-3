@@ -1,0 +1,40 @@
+﻿<Window x:Class="WpfApp1.WindowClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="WindowClient" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+        </Grid.RowDefinitions>
+        <UniformGrid Columns="2">
+            <TextBlock>idКлиента</TextBlock>
+            <TextBox Text="{Binding ID}"></TextBox>
+            <TextBlock>Фамилия</TextBlock>
+            <TextBox Text="{Binding FirstName}"></TextBox>
+            <TextBlock>Имя</TextBlock>
+            <TextBox Text="{Binding LastName}"></TextBox>
+            <TextBlock>Отчество</TextBlock>
+            <TextBox Text="{Binding Patronymic}"></TextBox>
+            <TextBlock>Дата рождения</TextBlock>
+            <DatePicker SelectedDate="{Binding Birthday}"></DatePicker>
+            <TextBlock>Дата и время регистрации</TextBlock>
+            <DatePicker SelectedDate="{Binding RegistrationDate}"></DatePicker>
+            <TextBlock>Email</TextBlock>
+            <TextBox Text="{Binding Email}"></TextBox>
+            <TextBlock>Телефон</TextBlock>
+            <TextBox Text="{Binding Phone}"></TextBox>
+            <TextBlock>Пол</TextBlock>
+            <ComboBox Name="CmbGender"
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding Gender}"></ComboBox>
+            <TextBlock>Фото</TextBlock>
+            <TextBox Text="{Binding PhotoPath }"></TextBox>
+        </UniformGrid>
+        <Button x:Name="BtnSaveData" Grid.Row="1" Click="BtnSaveData_Click_1">Сохранить</Button>
+    </Grid>
+</Window>

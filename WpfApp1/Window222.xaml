@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfApp1.Window222"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Window222" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+        </Grid.RowDefinitions>
+        <UniformGrid Columns="2">
+            <TextBlock>id</TextBlock>
+            <TextBox Text="{Binding ID}"></TextBox>
+            <TextBlock>idклиента</TextBlock>
+            <ComboBox Name="CmbClient"
+                      DisplayMemberPath="ID"
+                      SelectedItem="{Binding Client}"></ComboBox>
+            <TextBlock>idуслуги</TextBlock>
+            <ComboBox Name="CmbService"
+                      DisplayMemberPath="ID"
+                      SelectedItem="{Binding Service}"></ComboBox>
+            <TextBlock>дата</TextBlock>
+            <DatePicker SelectedDate="{Binding StartTime}"></DatePicker>
+            <TextBlock>комментарий</TextBlock>
+            <TextBox Text="{Binding Comment}"></TextBox>
+        </UniformGrid>
+        <Button x:Name="BtnSaveData" Grid.Row="1" Click="BtnSaveData_Click_2">Сохранить</Button>
+    </Grid>
+</Window>

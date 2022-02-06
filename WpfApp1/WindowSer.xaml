@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfApp1.WindowSer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="WindowSer" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="BtnAdeteData" Content="Добавить" Click="BtnAdeteData_Click"></Button>
+            <Button x:Name="BtnDeleteData" Content="Удалить" Click="BtnDeleteData_Click"></Button>
+        </StackPanel>
+        <DataGrid Grid.Row="1" x:Name="DataGridService"
+                  ColumnWidth="*"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="idсервиса" Binding="{Binding ID}"/>
+                <DataGridTextColumn Header="Название услуги" Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Cost}"/>
+                <DataGridTextColumn Header="Продолжительность" Binding="{Binding DurationInSeconds}"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="Скидка" Binding="{Binding Discount}"/>
+                <DataGridTextColumn Header="Картинка" Binding="{Binding MainImagePath}"/>
+                <DataGridTemplateColumn Header="Редактировать">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnEditData" Click="BtnEditData_Click">Изменить</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
